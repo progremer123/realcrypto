@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Code</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>인증 코드 확인</h2>
+        <form action="/verify_code" method="POST">
+            <label for="auth_code">인증 코드:</label>
+            <input type="text" id="auth_code" name="auth_code" required>
+            <button type="submit">확인</button>
+        </form>
+    </div>
+</body>
+</html>

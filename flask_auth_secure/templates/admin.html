@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>관리자</title>
+  </head>
+  <body>
+    <h2>👑 전체 사용자 목록</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <th>닉네임</th>
+        <th>이메일</th>
+      </tr>
+      {% for user in users %}
+      <tr>
+        <td>{{ user[0] }}</td>
+        <td>{{ user[1] }}</td>
+        <td>{{ user[2] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <p><a href="/">← 메인</a></p>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+/* 공통 초기화 */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+/* 배경 색상 */
+body:not(.login) {
+  background: linear-gradient(135deg, #e0f7fa, #fff);
+}
+body.login {
+  background: linear-gradient(to right, #f3e5f5, #e1bee7);
+}
+
+/* 컨테이너 */
+.container,
+.login-box {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  transition: transform 0.2s ease;
+}
+.container:hover,
+.login-box:hover {
+  transform: scale(1.01);
+}
+
+/* 헤더 */
+h1,
+h2 {
+  margin-bottom: 1.5rem;
+  color: #00796b;
+}
+.login-box h2 {
+  color: #6a1b9a;
+}
+
+/* 버튼 */
+button {
+  background: #00796b;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+button:hover {
+  background: #004d40;
+}
+.login-box button {
+  background-color: #6a1b9a;
+}
+.login-box button:hover {
+  background-color: #4a148c;
+}
+
+/* 입력 */
+.login-box input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* 출력 */
+#password {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #333;
+  word-break: break-word;
+}
+
+/* 링크 */
+.login-link,
+.login-box a {
+  display: block;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #00796b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.login-link:hover,
+.login-box a:hover {
+  color: #004d40;
+  text-decoration: underline;
+}
+.login-box a {
+  color: #6a1b9a;
+}
+.login-box a:hover {
+  color: #4a148c;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .container,
+  .login-box {
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+
+  #password {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .login-link,
+  .login-box a {
+    font-size: 0.85rem;
+  }
+}
+/* 슬라이더 스타일 */
+input[type='range'] {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* 옵션 체크박스 라벨 */
+label {
+  font-weight: bold;
+  color: #444;
+}
+
+/* 체크박스 간격 */
+input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+body {
+  background-color: #f8f9fa;
+}
+
+#password {
+  word-break: break-all;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+}

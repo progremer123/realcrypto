@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>내 사이트 목록</title>
+    <script>
+      function copyAndGo(url, id, pw) {
+        navigator.clipboard.writeText(`ID: ${id}\nPW: ${pw}`)
+        alert('클립보드에 로그인 정보가 복사되었습니다. 페이지로 이동합니다.')
+        window.open(url, '_blank')
+      }
+    </script>
+  </head>
+  <body>
+    <h2>🔐 저장된 로그인 사이트</h2>
+    <a href="/add_site">+ 새 사이트 추가</a>
+    <ul>
+      {% for site in sites %}
+      <li>
+        <strong>{{ site[1] }}</strong>
+        <button
+          onclick="copyAndGo('{{ site[2] }}', '{{ site[3] }}', '{{ site[4] }}')"
+        >
+          로그인 이동
+        </button>
+      </li>
+      {% endfor %}
+    </ul>
+    <p><a href="/">← 홈으로</a></p>
+  </body>
+</html>

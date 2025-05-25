@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>비밀번호 생성기</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script>
+      function goToDashboard(isLoggedIn) {
+        if (!isLoggedIn) {
+          alert('로그인이 필요합니다. 로그인 페이지로 이동합니다.')
+          window.location.href = '/login'
+        } else {
+          window.location.href = '/dashboard'
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🔐 비밀번호 생성기</h1>
+
+      {% if 'username' in session %}
+      <p>👋 안녕하세요, <strong>{{ session['username'] }}</strong>님!</p>
+      <button onclick="goToDashboard(true)">사이트 대시보드로 이동</button>
+      <a href="/logout">로그아웃</a>
+      {% else %}
+      <p>로그인하지 않은 상태입니다.</p>
+      <a href="/login">로그인</a> | <a href="/signup">회원가입</a>
+      <button onclick="goToDashboard(false)">사이트 대시보드</button>
+      {% endif %}
+
+      <hr />
+
+      <!-- 기존 비밀번호 생성기 UI도 여기에 계속 유지 -->
+      <label for="length"
+        >비밀번호 길이: <span id="lengthValue">12</span></label
+      >
+      <input
+        type="range"
+        id="length"
+        min="4"
+        max="32"
+        value="12"
+        oninput="updateLengthLabel()"
+      /><br />
+      <label
+        ><input type="checkbox" id="includeLower" checked /> 소문자 포함</label
+      ><br />
+      <label
+        ><input type="checkbox" id="includeUpper" checked /> 대문자 포함</label
+      ><br />
+      <label
+        ><input type="checkbox" id="includeNumbers" checked /> 숫자 포함</label
+      ><br />
+      <label
+        ><input type="checkbox" id="includeSymbols" checked /> 특수문자
+        포함</label
+      ><br /><br />
+
+      <button onclick="generatePassword()">비밀번호 생성</button>
+      <p id="password"></p>
+      <button onclick="copyPassword()">📋 복사하기</button>
+
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </div>
+  </body>
+</html>
