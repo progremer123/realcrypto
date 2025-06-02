@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원탈퇴</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>회원탈퇴</h2>
+        <p>정말로 회원탈퇴를 진행하시겠습니까? 😢</p>
+        <form action="/delete_account" method="POST">
+            <button type="submit" class="btn btn-danger">회원탈퇴</button>
+            <a href="/dashboard" class="btn btn-secondary">취소</a>
+        </form>
+    </div>
+</body>
+</html>

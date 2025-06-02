@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP 인증 방식 선택</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>OTP 인증 방식 선택</h2>
+        <form action="/select_otp_method" method="POST">
+            <label for="otp_method">인증 방식을 선택하세요:</label>
+            <select id="otp_method" name="otp_method">
+                <option value="email">이메일</option>
+                <option value="sms">SMS</option>
+                <option value="authenticator_app">인증 앱</option>
+            </select>
+            <button type="submit">저장</button>
+        </form>
+    </div>
+</body>
+</html>
